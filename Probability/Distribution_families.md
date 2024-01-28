@@ -37,7 +37,7 @@ $$
 
 ### 均匀分布
 
-### 伽马分布、卡方分布和指数分布 Gamma Distribution, Chi-square Distribution & Exponential Distribution
+### 伽马分布和卡方分布 Gamma Distribution & Chi-squared Distribution
 
 对于一个函数$f(x)$，如果能满足$f(x)\geqslant 0$且$\displaystyle \int_{-\infty}^{\infty}f(x)\mathrm{d}x<+\infty$，则可以将
 $$
@@ -55,3 +55,18 @@ f_X(x|\alpha,\beta)=\frac{x^{\alpha-1}\mathrm{e}^{-\beta x}}{\beta^{-\alpha}\Gam
 > $$\mathbb{E}[X]=\frac{1}{\beta^{-\alpha}\Gamma(\alpha)}\int_0^{+\infty}x^{\alpha}\mathrm{e}^{-\beta x}\mathrm{d}x=\frac{\Gamma(\alpha+1,\beta)}{\beta^{-\alpha}\Gamma(\alpha)}=\frac{\beta^{-\alpha-1}\Gamma(\alpha+1)}{\beta^{-\alpha}\Gamma(\alpha)}=\frac{\alpha}{\beta}$$
 > $$\mathbb{E}[X^2]=\frac{\Gamma(\alpha+2,\beta)}{\beta^{-\alpha}\Gamma(\alpha)}=\frac{\beta^{-\alpha-2}\Gamma(\alpha+2)}{\beta^{-\alpha}\Gamma(\alpha)}=\frac{\alpha(\alpha+1)}{\beta^2}$$
 > $$\mathrm{var}(X)=\mathbb{E}[X^2]-\mathbb{E}[X]^2=\frac{\alpha}{\beta^2}$$
+
+其中$\alpha$是形状参数(shape parameter)，决定函数分布的峰度；$\beta$是尺度参数(scale parameter)，决定函数图像横向上的缩放。
+
+特别地，令$\displaystyle \alpha=\frac{n}{2}$，其中$n$为正整数，并令$\displaystyle\beta=\frac{1}{2}$，则得到了
+$$
+f_X(x|n)=\frac{\displaystyle x^{\frac{n}{2}-1}\mathrm{e}^{-\frac{x}{2}}}{\displaystyle 2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)}
+$$
+该分布为自由度为$n$的**卡方分布**，记为$X\sim \chi_n^2$.
+
+### 指数分布和埃尔朗分布 Exponential Distribution & Erlang Distribution
+
+特别地，当$\alpha=1$时，此时用$\lambda$代替$\beta$，就得到了**指数分布**，其PDF为
+$$
+f_X(x|\lambda)=\lambda \mathrm{e}^{-\lambda x}$$
+记为$X\sim\mathcal{E}(\lambda)$，则有$\displaystyle \mathbb{E}[X]=\frac{1}{\lambda}$和$\displaystyle \mathrm{var}(X)=\frac{1}{\lambda^2}$
