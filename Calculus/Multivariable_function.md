@@ -31,10 +31,10 @@ $$
 \Vert\boldsymbol{X}\Vert_p:=\left(\sum_{i=1}^n |x_i|^p\right)^\frac{1}{p}
 $$
 
-常用的范数包括1-范数 $\displaystyle \|\boldsymbol{X}\|_1=\sum_i |x_i|$，2-范数 $\displaystyle \|\boldsymbol{X}\|_2=\sum_i |x_i|^2$ 和无穷范数 $\displaystyle \|\boldsymbol{X}\|_\infty=\max_i |x_i|$. 我们使用2-范数，又称为**Euclid距离**，来作为上述线性空间中的度量，并省略下标2. 因此， $\langle\,\mathbb{R}^n,+,\cdot\,\rangle$ 中两个点 $\boldsymbol{X}$ 和 $\boldsymbol{Y}$ 的距离定义为
+常用的范数包括1-范数 $\displaystyle \Vert\boldsymbol{X}\Vert_1=\sum_i |x_i|$，2-范数 $\displaystyle \Vert\boldsymbol{X}\Vert_2=\sum_i |x_i|^2$ 和无穷范数 $\displaystyle \Vert\boldsymbol{X}\Vert_\infty=\max_i |x_i|$. 我们使用2-范数，又称为**Euclid距离**，来作为上述线性空间中的度量，并省略下标2. 因此， $\langle\,\mathbb{R}^n,+,\cdot\,\rangle$ 中两个点 $\boldsymbol{X}$ 和 $\boldsymbol{Y}$ 的距离定义为
 
 $$
-d(\boldsymbol{X},\boldsymbol{Y}) := \|\boldsymbol{X}-\boldsymbol{Y}\|
+d(\boldsymbol{X},\boldsymbol{Y}) := \Vert\boldsymbol{X}-\boldsymbol{Y}\Vert
 $$
 
 可以验证这一定义满足上面提到的三个条件，至此，我们已经完成了 $n$ 维Euclid度量空间的定义 $\langle\,\mathbb{R}^n,+,\cdot,d\,\rangle$.
@@ -44,11 +44,11 @@ $$
 对于点 $\boldsymbol{X}_0$ 和实数 $\delta >0$， 定义点 $\boldsymbol{X}_0$ 的 **$\delta$-邻域**和**去心 $\delta$-邻域**为
 
 $$
-B(\boldsymbol{X}_0,\delta):=\{\boldsymbol{X}:\|\boldsymbol{X}-\boldsymbol{X}_0\| <\delta\}
+B(\boldsymbol{X}_0,\delta):=\{\boldsymbol{X}:\Vert\boldsymbol{X}-\boldsymbol{X}_0\Vert <\delta\}
 $$
 
 $$
-B^\circ(\boldsymbol{X}_0,\delta):=\{\boldsymbol{X}:0<\|\boldsymbol{X}-\boldsymbol{X}_0\| <\delta\} = B(\boldsymbol{X}_0,\delta)\backslash\{\boldsymbol{X}_0\}
+B^\circ(\boldsymbol{X}_0,\delta):=\{\boldsymbol{X}:0<\Vert\boldsymbol{X}-\boldsymbol{X}_0\Vert <\delta\} = B(\boldsymbol{X}_0,\delta)\backslash\{\boldsymbol{X}_0\}
 $$
 
 基于这一定义，我们可以对空间中点和集合的性质进行一些分类。考虑 $\mathbb{R}^n$ 中的集合 $E$。则对于 $\mathbb{R}^n$ 中的点 $\boldsymbol{X}_0$，定义
@@ -86,7 +86,7 @@ $$
 > - 点 $\boldsymbol{X}$ 的**邻域**(neighbor)指的是包含 $\boldsymbol{X}$ 的开集，可以记为 $N(\boldsymbol{X})$.
 > - 一个集合的聚点可能是集合的内点，也可能是集合的边界点，但绝无可能是集合的外点。 
 
-下面介绍**紧集**. 有界闭集称为紧集. 称一个集合 $E$ **有界**，如果存在 $0<M<\infty$，使得 $\forall\boldsymbol{X}\in E$，都有 $\|\boldsymbol{X}\|\leqslant M$. 同一维情形下的闭区间，有界闭集具有有限覆盖性质，即对于紧集 $E$ 的任何一个开覆盖 $\{G_\alpha\}_{\alpha\in\Gamma}$，$\displaystyle E\subset\bigcup_{\alpha\in\Gamma}G_\alpha$，总能在其中找到其中有限个集合覆盖 $E$，即 $\displaystyle E\subset\bigcup_{i=1}^N G_{\alpha_i}$.
+下面介绍**紧集**. 有界闭集称为紧集. 称一个集合 $E$ **有界**，如果存在 $0 < M < \infty$，使得 $\forall\boldsymbol{X}\in E$，都有 $\Vert\boldsymbol{X}\Vert\leqslant M$. 同一维情形下的闭区间，有界闭集具有有限覆盖性质，即对于紧集 $E$ 的任何一个开覆盖 $\{G_\alpha\}_{\alpha\in\Gamma}$ ，$\displaystyle E\subset\bigcup_{\alpha\in\Gamma}G_\alpha$，总能在其中找到其中有限个集合覆盖 $E$，即 $\displaystyle E\subset\bigcup_{i=1}^N G_{\alpha_i}$.
 
 最后介绍集合的连通性。如果一个集合中任意两点均可用一条**折线段**连接，则称该集合为连通集，否则为不连通。连通开集称为**开区域**，开区域的闭包称为**闭区域**。
 
