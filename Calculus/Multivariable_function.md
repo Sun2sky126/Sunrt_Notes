@@ -28,7 +28,7 @@
 定义向量 $\boldsymbol{X}$ 的 $p$-**范数**(norm)为
 
 $$
-\|\boldsymbol{X}\|_p:=\left(\sum_{i=1}^n |x_i|^p\right)^\frac{1}{p}
+\Vert\boldsymbol{X}\Vert_p:=\left(\sum_{i=1}^n |x_i|^p\right)^\frac{1}{p}
 $$
 
 常用的范数包括1-范数 $\displaystyle \|\boldsymbol{X}\|_1=\sum_i |x_i|$，2-范数 $\displaystyle \|\boldsymbol{X}\|_2=\sum_i |x_i|^2$ 和无穷范数 $\displaystyle \|\boldsymbol{X}\|_\infty=\max_i |x_i|$. 我们使用2-范数，又称为**Euclid距离**，来作为上述线性空间中的度量，并省略下标2. 因此， $\langle\,\mathbb{R}^n,+,\cdot\,\rangle$ 中两个点 $\boldsymbol{X}$ 和 $\boldsymbol{Y}$ 的距离定义为
