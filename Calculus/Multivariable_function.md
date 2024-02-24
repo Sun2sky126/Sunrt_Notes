@@ -15,17 +15,17 @@
 ### $n$维Euclid空间的定义
 
 对于一个集合$X$，如果对于其中的任意两个元素$x_1$和$x_2$，我们都能定义这两个元素之间的**距离**(distance)或**度量**(metric) $d(x_1,x_2)$，且这个距离具有如下性质：
-- **正定性**：对任意两个元素，总有$d(x_1,x_2)\geqslant 0$；且$d(x_1,x_2)=0$当且仅当$x_1=x_2$.
-- **对称性**：对任意两个元素，总有$d(x_1,x_2)=d(x_2,x_1)$.
-- **三角不等式**：对任意三个元素，总有$d(x_1,x_2)+d(x_2,x_3)\geqslant d(x_1,x_3)$.
+- **正定性**：对任意两个元素，总有 $d(x_1,x_2)\geqslant 0$；且 $d(x_1,x_2)=0$ 当且仅当 $x_1=x_2$.
+- **对称性**：对任意两个元素，总有 $d(x_1,x_2)=d(x_2,x_1)$.
+- **三角不等式**：对任意三个元素，总有 $d(x_1,x_2)+d(x_2,x_3)\geqslant d(x_1,x_3)$.
 
 则称 $\langle\,X,d\,\rangle$ 构成了一个**度量空间**(metric space). 
 
-在线性代数中我们已经引入了$n$维实线性空间 $\langle\,\mathbb{R}^n,+,\cdot\,\rangle$，$\mathbb{R}^n$中的元素可以表示为$\boldsymbol{X}=(x_1,\cdots,x_n)^\mathrm{T}$，可以称$\boldsymbol{X}$为一个**点**或者**向量**。
+在线性代数中我们已经引入了$n$维实线性空间 $\langle\,\mathbb{R}^n,+,\cdot\,\rangle$，$\mathbb{R}^n$ 中的元素可以表示为 $\boldsymbol{X}=(x_1,\cdots,x_n)^\mathrm{T}$，可以称 $\boldsymbol{X}$ 为一个**点**或者**向量**。
 
 > 关于 $\langle\,\mathbb{R}^n,+,\cdot\,\rangle$ 空间的更详尽介绍可以参考线性代数部分的笔记。由于在微积分部分的笔记中我们不过多强调矩阵运算，所以后面将省略转置上标。
 
-定义向量$\boldsymbol{X}$的 $p$-**范数**(norm)为
+定义向量 $\boldsymbol{X}$ 的 $p$-**范数**(norm)为
 
 $$
 \|\boldsymbol{X}\|_p:=\left(\sum_{i=1}^n |x_i|^p\right)^\frac{1}{p}
@@ -37,14 +37,16 @@ $$
 d(\boldsymbol{X},\boldsymbol{Y}) := \|\boldsymbol{X}-\boldsymbol{Y}\|
 $$
 
-可以验证这一定义满足上面提到的三个条件，至此，我们已经完成了$n$维Euclid度量空间的定义 $\langle\,\mathbb{R}^n,+,\cdot,d\,\rangle$.
+可以验证这一定义满足上面提到的三个条件，至此，我们已经完成了 $n$ 维Euclid度量空间的定义 $\langle\,\mathbb{R}^n,+,\cdot,d\,\rangle$.
 
 ### 空间上的点集拓扑
 
 对于点 $\boldsymbol{X}_0$ 和实数 $\delta >0$， 定义点 $\boldsymbol{X}_0$ 的 **$\delta$-邻域**和**去心 $\delta$-邻域**为
+
 $$
 B(\boldsymbol{X}_0,\delta):=\{\boldsymbol{X}:\|\boldsymbol{X}-\boldsymbol{X}_0\| <\delta\}
 $$
+
 $$
 B^\circ(\boldsymbol{X}_0,\delta):=\{\boldsymbol{X}:0<\|\boldsymbol{X}-\boldsymbol{X}_0\| <\delta\} = B(\boldsymbol{X}_0,\delta)\backslash\{\boldsymbol{X}_0\}
 $$
@@ -53,7 +55,7 @@ $$
 
 - $\boldsymbol{X}_0$ 是 $E$ 的**内点**，如果存在 $\delta > 0$，满足 $B(\boldsymbol{X}_0,\delta)\subset E$.
 - $\boldsymbol{X}_0$ 是 $E$ 的**外点**，如果存在 $\delta > 0$，满足 $B(\boldsymbol{X}_0,\delta)\subset E^\mathrm{c}$.
-- $\boldsymbol{X}_0$ 是 $E$ 的**边界点**，如果它既不是 $E$ 的内点，也不是 $E$ 的外点. 也可以这样定义：对于$\forall\delta>0$，$B(\boldsymbol{X}_0,\delta)\cap E\neq\varnothing$ 且 $B(\boldsymbol{X}_0,\delta)\cap E^\mathrm{c}\neq\varnothing$.
+- $\boldsymbol{X}_0$ 是 $E$ 的**边界点**，如果它既不是 $E$ 的内点，也不是 $E$ 的外点. 也可以这样定义：对于 $\forall\delta>0$，$B(\boldsymbol{X}_0,\delta)\cap E\neq\varnothing$ 且 $B(\boldsymbol{X}_0,\delta)\cap E^\mathrm{c}\neq\varnothing$.
 
 > 从定义中可以看出：给定点 $\boldsymbol{X}_0$ 和集合 $E$，二者之间的关系必然居于上述三种情况之一。集合的内点一定属于该集合，外点一定不属于该集合，边界点不一定属于或不属于该集合。
 
