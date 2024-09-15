@@ -6,6 +6,6 @@
 
 - [x] 微积分 Calculus
 - [x] 概率论 Probability
-- [] 随机过程 Stochastic Process
+- [ ] 随机过程 Stochastic Process
 
 ## 当前进度
