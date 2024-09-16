@@ -28,33 +28,33 @@ $$
 
 > 不能把无穷小量视作数字0（虽然有些场景下这样处理确实很爽，但有些场景则会出现0/0或者$0\times\infty$的复杂情形）。无穷小量并不是一个静态的数字，而是一个动态的变量，一个被下标$n$调控的量。我们可以调控$n$以使得这个变量的值可以**任意小**，因而称为无穷小量。
 
-如果数列$\{x_n\}$满足：对任意的$E>0$，总存在$N_E>0$，使得对于任意$n>N_E$，总有$\vert x_n\vert > E$，则称数列$\{x_n\}$为**无穷大量**。记为$\lim x_n=\infty$或者$x_n\rightarrow\infty$. 特别地，如果$x_n$在这一过程中保持符号，例如，对任意的$E>0$，总存在$N_E>0$，使得对于任意$n>N_E$，总有$ x_n > E$（**注意这里没有绝对值号**），则记为$\lim x_n=+\infty$或$x_n\rightarrow +\infty$。如果$\{x_n\}$满足$-x_n\rightarrow+\infty$，则可以记作$\lim x_n=-\infty$或$x_n\rightarrow -\infty$.
+如果数列$\{x_n\}$满足：对任意的$E>0$，总存在$N_E>0$，使得对于任意$n>N_E$，总有$\vert x_n\vert > E$，则称数列$\{x_n\}$为**无穷大量**。记为$\lim x_n=\infty$或者$x_n\rightarrow\infty$. 特别地，如果$x_n$在这一过程中保持符号，例如，对任意的$E>0$，总存在$N_E>0$，使得对于任意$n > N_E $，总有 $x_n > E$ (**注意这里没有绝对值号**)，则记为$\lim x_n=+\infty$或$x_n\rightarrow +\infty$。如果$\{x_n\}$满足$-x_n\rightarrow+\infty$，则可以记作$\lim x_n=-\infty$或$x_n\rightarrow -\infty$.
 
 > - 上面的定义是在描述：通过选择合适的$N$，我们可以将$\vert x_n\vert$（或者$x_n$，或者$-x_n$）控制到**任意大**.
 > - 无穷大量同样也不是一个静态的数，而是一个变量。
 
 ### 无穷小量和无穷大量的性质
 
-(1) **加法**：**有限个**无穷小量的和仍然是无穷小量，即$o(1)+o(1)=o(1)$.
+（1） **加法**：**有限个**无穷小量的和仍然是无穷小量，即$o(1)+o(1)=o(1)$.
 
-(2) **乘法**：若$\{x_n\}$有界，则$\{x_n\}$和一个无穷小量的积也是无穷小量。
+（2） **乘法**：若$\{x_n\}$有界，则$\{x_n\}$和一个无穷小量的积也是无穷小量。
 
-(3) **倒数**：若$\{x_n\}$是无穷大量，则$\displaystyle\left\{\frac{1}{x_n}\right\}$是无穷小量；若$\{x_n\}$是无穷小量且$x_n\neq 0$，则$\displaystyle\left\{\frac{1}{x_n}\right\}$是无穷大量.
+（3） **倒数**：若$\{x_n\}$是无穷大量，则$\displaystyle \left\{\frac{1}{x_n}\right\}$是无穷小量；若$\{x_n\}$是无穷小量且$x_n\neq 0$，则$\displaystyle \left\{\frac{1}{x_n}\right\}$是无穷大量.
 
 ## 极限的相关性质 Properties of Limits
 
 ### 单个数列极限的性质
 
-(1) **保序性、保号性**：假定$\lim x_n = a$且$a > p$，则从某一项开始（或者说，存在一个$N_p$，使得对于任意的$n>N_p$），总有$x_n>p$。同理，若$a < q$，则从某一项开始，总有$x_n < q$。是为极限的**保序性**。
+（1） **保序性、保号性**：假定$\lim x_n = a$且$a > p$，则从某一项开始（或者说，存在一个$N_p$，使得对于任意的$n>N_p$），总有$x_n>p$。同理，若$a < q$，则从某一项开始，总有$x_n < q$。是为极限的**保序性**。
 
 > 证明思路是很直接的：以$a>p$为例，只需要取一个足够小的$\varepsilon$满足$a-\varepsilon>p$（例如可以取$\displaystyle \varepsilon=\frac{a-p}{2}$）。则对任意$n>N_\varepsilon$，总有$x_n>a-\varepsilon>p$。另一种情况同理。
 
 特别地，当$a>0$时，可以取$p=0$；当$a<0$时，可以取$q=0$。即：若数列趋于一个正数，则从某一项开始数列恒正；若数列趋于一个负数，则从某一项开始数列恒负。是为数列的**保号性**。
 
-(2) **有界性**：收敛数列必有界。即若$\{x_n\}$收敛到$a$，则存在$M>0$，使得对于**所有**$x_n$，均有$\vert x_n\vert \leqslant M$.
+（2） **有界性**：收敛数列必有界。即若$\{x_n\}$收敛到$a$，则存在$M>0$，使得对于**所有**$x_n$，均有$\vert x_n\vert \leqslant M$.
 
 > 任意取$\varepsilon$和一个对应的$N_\varepsilon$，则对于$n>N_\varepsilon$的部分，有$\vert x_n \vert < \vert a\vert + \varepsilon$；对于$1\leqslant n \leqslant N_\varepsilon$的部分，这$N_\varepsilon$个有限的$\vert x_n \vert$中总能照到一个最大值，令$\displaystyle M=\max\left\{\max_{1\leqslant n\leqslant N_\varepsilon}|x_n|, \vert a\vert + \varepsilon\right\}$即可。
 
-(3) **唯一性**：收敛数列有且仅有一个极限。即若$x_n\rightarrow a$且同时$x_n\rightarrow b$，则必然有$a=b$。
+（3） **唯一性**：收敛数列有且仅有一个极限。即若$x_n\rightarrow a$且同时$x_n\rightarrow b$，则必然有$a=b$。
 
 ### 多个数列极限的性质
