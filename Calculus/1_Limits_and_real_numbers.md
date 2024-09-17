@@ -58,3 +58,35 @@ $$
 （3） **唯一性**：收敛数列有且仅有一个极限。即若$x_n\rightarrow a$且同时$x_n\rightarrow b$，则必然有$a=b$。
 
 ### 多个数列极限的性质
+
+（1-a）**保序性**：若$x_n\rightarrow a$，$y_n\rightarrow b$，且$a>b$，则从某一项开始，始终有$x_n>y_n$.
+
+（1-b）**保序性**：若$x_n\rightarrow a$，$y_n\rightarrow b$，且从某一项开始始终有$x_n\geqslant y_n$，则$a\geqslant b$.
+
+> **注意**：在保序性1-a中，必须是**严格大于**的关系，如果换成大于等于则未必成立（等号很容易找到反例）。而在保序性1-b中，必须是**大于等于**的关系。因为即使$x_n$的每一项都严格大于$y_n$，二者仍可能收敛到同一极限.
+
+<span id="sqz_thm"> </span>
+
+（2）**夹逼定理**：若数列$\{x_n\}$、$\{y_n\}$和$\{z_n\}$满足，从某一项开始始终有$x_n\leqslant y_n\leqslant z_n$，且$\lim x_n = \lim z_n = a$，则$y_n$也收敛至$a$.
+
+（3）**四则运算**：若$x_n\rightarrow a$且$y_n\rightarrow b$，则$cx_n\pm dy_n\rightarrow ca+db$, $x_ny_n\rightarrow ab$；如果能保证$y_n\neq $和$b\neq 0$，则还可以有$\displaystyle \frac{x_n}{y_n}\rightarrow \frac{a}{b}$.
+
+> **注意**：我们要求四则运算中的两个数列收敛到有限的数，即不包含无穷大量的情形。形如$\displaystyle\frac{0}{0}$、$\displaystyle\frac{\infty}{\infty}$、$0\cdot\infty$、$\infty\pm\infty$的形式称为**不定式**，它们有可能是无穷小量，可能是无穷大量，可能收敛到一个非0实数，也可能根本就没有极限。
+
+## 收敛数列的判据和极限的求法 Finding the Limits
+
+本节介绍一些数列收敛性的常用判定依据，和一些求极限的方法。
+
+（1）**根据定义**：使用$\varepsilon-N$语言判据.
+
+（2）**根据夹逼定理**：夹逼定理参考[上一节](#sqz_thm)针对数列进行左右两个方向的放缩，如果两个新的数列收敛到同一个极限，则原数列也必然收敛到这个值。
+
+> 一个推论是，如果$x_n\rightarrow +\infty$，且从某项开始$y_n \geqslant x_n$，则$y_n\rightarrow +\infty$。负无穷大的情况同理.
+
+（3）**参考一些增长数列的大小关系**：粗略而言，我们有：
+
+$$
+(\log n)^k \prec n \prec n^k \prec a^n \prec n! \prec n^n,\quad k,a>1
+$$
+
+这里用$\prec$表示一种近似的大小关系：当$n$足够大时，这种不等关系总是成立的，因此可以得到$\displaystyle \frac{\log n}{n^k}\rightarrow 0$、$\displaystyle \frac{n^k}{n!}\rightarrow 0$、$\displaystyle \frac{a^n}{n^n}\rightarrow 0$等结论，进一步，可以得到$\sqrt[n]{n}\rightarrow 1$等结论。
