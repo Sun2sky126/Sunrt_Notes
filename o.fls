@@ -1,0 +1,9 @@
+PWD d:/Files/Sunrt_Notes
+INPUT d:/Softwares/texlive/2024/texmf.cnf
+INPUT d:/Softwares/texlive/2024/texmf-dist/web2c/texmf.cnf
+INPUT d:/Softwares/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT d:/Files/Sunrt_Notes/o.tex
+OUTPUT o.log
+INPUT d:/Softwares/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT d:/Softwares/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT d:/Softwares/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm

@@ -69,7 +69,7 @@ $$
 
 （2）**夹逼定理**：若数列$\{x_n\}$、$\{y_n\}$和$\{z_n\}$满足，从某一项开始始终有$x_n\leqslant y_n\leqslant z_n$，且$\lim x_n = \lim z_n = a$，则$y_n$也收敛至$a$.
 
-（3）**四则运算**：若$x_n\rightarrow a$且$y_n\rightarrow b$，则$cx_n\pm dy_n\rightarrow ca+db$, $x_ny_n\rightarrow ab$；如果能保证$y_n\neq $和$b\neq 0$，则还可以有$\displaystyle \frac{x_n}{y_n}\rightarrow \frac{a}{b}$.
+（3）**四则运算**：若$x_n\rightarrow a$且$y_n\rightarrow b$，则$cx_n\pm dy_n\rightarrow ca+db$, $x_ny_n\rightarrow ab$；如果能保证$y_n\neq 0$和$b\neq 0$，则还可以有$\displaystyle \frac{x_n}{y_n}\rightarrow \frac{a}{b}$.
 
 > **注意**：我们要求四则运算中的两个数列收敛到有限的数，即不包含无穷大量的情形。形如$\displaystyle\frac{0}{0}$、$\displaystyle\frac{\infty}{\infty}$、$0\cdot\infty$、$\infty\pm\infty$的形式称为**不定式**，它们有可能是无穷小量，可能是无穷大量，可能收敛到一个非0实数，也可能根本就没有极限。
 
@@ -89,4 +89,4 @@ $$
 (\log n)^k \prec n \prec n^k \prec a^n \prec n! \prec n^n,\quad k,a>1
 $$
 
-这里用$\prec$表示一种近似的大小关系：当$n$足够大时，这种不等关系总是成立的，因此可以得到$\displaystyle \frac{\log n}{n^k}\rightarrow 0$、$\displaystyle \frac{n^k}{n!}\rightarrow 0$、$\displaystyle \frac{a^n}{n^n}\rightarrow 0$等结论，进一步，可以得到$\sqrt[n]{n}\rightarrow 1$等结论。
+这里用$\prec$表示一种近似的大小关系：当$n$足够大时，这种不等关系总是成立的。在这个关系链中，左边和右边的比值总是趋于0，因此可以得到$\displaystyle \frac{\log n}{n^k}\rightarrow 0$、$\displaystyle \frac{n^k}{n!}\rightarrow 0$、$\displaystyle \frac{a^n}{n^n}\rightarrow 0$等结论，进一步，可以得到$\sqrt[n]{n}\rightarrow 1$等结论。
