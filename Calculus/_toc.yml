@@ -1,0 +1,6 @@
+# In _toc.yml
+format: jb-book
+root: 0_Intro
+chapters:
+- file: 1_Limits_and_real_numbers
+- file: Multivariable_function

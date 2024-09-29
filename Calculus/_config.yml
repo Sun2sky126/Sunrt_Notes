@@ -1,0 +1,6 @@
+# In _config.yml
+title: 微积分 Calculus
+author: Sunrt_THU
+logo: aya.jpg
+execute:
+  execute_notebooks: force
