@@ -1,12 +1,6 @@
 # In _toc.yml
 format: jb-book
-root: Readme
-parts:
-  - caption: 微积分 Calculus
-    chapters:
-    - file: .Calculus/0_Intro.md
-    - file: .Calculus/1_Limits_and_real_numbers.md
-  - caption: 随机过程 Stochastic Processes
-    chapters:
-    - file: .Stochastic_Processes/0_Intro.md
-    - file: .Stochastic_Processses/1_Concepts_and_classification.md
+root: 0_Intro
+chapters:
+# - file: 0_Intro
+- file: 1_Limits_and_real_numbers

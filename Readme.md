@@ -1,5 +1,9 @@
 # Rt的课程笔记  ~ Notes of Rt
 
+[![CC BY-NC 3.0](https://img.shields.io/badge/CC_BY--NC-3.0-green?style=flat-square)
+](https://creativecommons.org/licenses/by-nc/3.0/deed.en)
+[![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-red?style=flat-square&logo=Jupyter)](https://jupyter.org/try)
+
 ## 这是什么？
 
 记录一些基础课程和专业课程的学习记录，以Markdown结合LaTeX的形式完成.目前施工情况：
