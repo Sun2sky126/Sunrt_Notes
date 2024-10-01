@@ -1,6 +1,8 @@
 # 数列极限与实数 Limits of Sequences & Real Numbers
 
-## 数列极限的定义
+<!-- $\newcommand{\varlimsup}{\overline{\lim}}$ -->
+
+## 数列极限的定义 Definition of Sequence Limits
 
 对于数列$\{x_n\}_{n=1}^{\infty}$，如果存在$l\in\mathbb{R}$，使得对于任意$\varepsilon>0$，总能找到一个对应的$N$，使得对于任意满足$n>N$的$x_n$，都有$\vert x_n-l\vert <\varepsilon$，则称数列$\{x_n\}_{n=1}^{\infty}$**收敛**（到$l$），或者说数列$\{x_n\}_{n=1}^{\infty}$趋于$l$，或称$l$是数列$\{x_n\}_{n=1}^{\infty}$的极限，记为
 
@@ -14,8 +16,6 @@ $$
 > - 我们用$N_\varepsilon$而不是$N(\varepsilon)$，来澄清$N$和$\varepsilon$并不是一个严格的映射（函数）关系。对于每一个$\varepsilon$，我们有不止一种选择$N$的方式。假如我们找到了一个合适的$N^\star_\varepsilon$，则显然$N^\star_\varepsilon+1$、$N^\star_\varepsilon+4$甚至$N^\star_\varepsilon+10000$等也可以作为$N_\varepsilon$的选取方式。
 
 对于数列$\{x_n\}_{n=1}^{\infty}$，只要能找到符合上述定义的$l\in\mathbb{R}$，则称其为**收敛**(convergent)的，否则是**发散**(divergent)的。
-
-## 无穷小量和无穷大量
 
 ### 无穷小量和无穷大量的概念
 
@@ -42,6 +42,43 @@ $$
 
 （3） **倒数**：若$\{x_n\}$是无穷大量，则$\displaystyle \left\{\frac{1}{x_n}\right\}$是无穷小量；若$\{x_n\}$是无穷小量且$x_n\neq 0$，则$\displaystyle \left\{\frac{1}{x_n}\right\}$是无穷大量.
 
+## 上下界和上下极限 Upper/Lower Bounds&Limits
+
+### 上下界和上下确界
+
+对数集$A$，如果存在$M$，使得对于$A$中的任意元素$x$，均有$x\leqslant M$，则称$M$是$A$的一个**上界**(upper bound)，称$A$是一个有上界的集合. 如果存在$N$，使得对于$A$中的任意元素$x$，均有$x\geqslant N$，则称$N$是$A$的一个**下界**(lower bound)，称$A$是一个有下界的集合. 如果一个集合既有上界又有下界，则称其是**有界**的.
+
+> 有界也可以定义为：存在$M$，使得对于$A$中的任意元素$x$，均有$|x|\leqslant M$.
+
+如果集合$A$有上界，则必然有无数个上界（比上界$M$更大的数自然也是一个上界）. 这些上界中的最小值称为$A$的**上确界**（supremum），记为$\sup A$. 如果更形式化地描述，则为：$M=\sup A$当且仅当：（1）$\forall x\in A$，均有$x\leqslant M$（即，$M$是$A$的上界）；（2）$\forall m < M$，$\exists x\in A$，使得$x>m$（即，$M$是$A$最小的下界；任何比$M$更小的数都不可能是$A$的下界. 同理可以定义下确界：$A$的下界中的最大值称为$A$的**下确界**（infimum），记为$\inf A$.
+
+> “确界”和“最值”的区别和联系：一个集合$A$的最值一定是$A$自身的一个元素. 如果$A$有最值，则这个最值就是确界. 但是如果$A$有确界，则未必有最值. 例如考虑区间$(0,1]$，其没有最小值，但是有下确界0；其有最大值1，这个最大值就是上确界.
+
+但作出上述定义时，我们有一个问题需要解决：如何保证这些上界的最小值就一定存在呢？如何保证这些下界的最大值就一定存在呢？我们有**确界定理**：有上界的集合必然有上确界；有下界的集合必然有下确界.
+
+> 确界定理是描述实数系完备性的基本定理之一，详见本章最后一节.
+
+### 上下极限
+
+不是所有数列都存在极限（无论是有限的数还是趋于无穷），但我们可以研究它的上下极限. 一个数列$\{x_n\}$的**上极限**（upper bound）记为$\displaystyle\limsup_{n\rightarrow \infty} x_n$或者$\displaystyle \varlimsup_{n\rightarrow \infty} x_n$，有下面两种等效的定义方式：
+
+- 定义1：数列$\{x_n\}$所有子列的极限的最大值（上确界）.
+- 定义2：$\displaystyle \limsup_{n\rightarrow \infty} x_n := \lim_{k\rightarrow\infty}\sup_{n>k}\{x_n\}$.
+
+> - 若$1\leqslant n_1 < n_2 < \cdots $，则称$\{x_{n_k}\}$是$\{x_n\}$的一个**子列**.
+> - 如果$\{x_n\}$没有上界，则上极限趋于正无穷；如果有上界，记$\displaystyle M_k:=\sup_{n>k}\{x_n\}$，则$\{M_k\}$是一个递减数列（由上确界定义可得），因此其必然趋于一有限数或负无穷. 因此任何有上界数列的上极限要么存在，要么趋于负无穷.
+> - 记$\displaystyle \lim_{k\rightarrow\infty} M_k = M$，则$\forall\varepsilon>0$，存在$K>0$，使得$\forall k>K$，有$M_k < M+\varepsilon$，因此对$n>k$也有$x_n \leqslant M_n < M_k < M+\varepsilon$. 对任意子列仍然成立，因此由极限的保序性，任意子列的极限$a$必然满足$a\leqslant M+\varepsilon$. 又因为$\varepsilon$是任意正数，因此$a\leqslant M$.
+> - 进一步地，为了说明$M$就是这个最大值，需要证明等号可以取到，即找到极限为$M$的子列. 构造方法如下：$\forall n>k$有$x_n < M+\varepsilon$，又$M-\varepsilon < M_k$，则$M-\varepsilon$必然不是$\{x_n\}_{n>k}$的上界，即$\exists n'>k$使得$x_{n'}>M-\varepsilon$，我们选出$x_{n'}$添加到子列中；然后选择一个更小的$\varepsilon'$（例如可以选择$\varepsilon'=M-x_{n'}$），重复上述步骤，选出子列的下一项. 因此总有$|x_{n'}-M|<\varepsilon$，这样就找到了一个趋于$M$的子列. 至此，我们证明了上述两种定义的等价性.
+
+类似地，数列的**下极限**记为$\displaystyle\liminf_{n\rightarrow\infty} x_n$或$\displaystyle\varliminf_{n\rightarrow\infty} x_n$，定义为：
+
+- 定义1：数列$\{x_n\}$所有子列的极限的最小值（下确界）.
+- 定义2：$\displaystyle \liminf_{n\rightarrow \infty} x_n := \lim_{k\rightarrow\infty}\inf_{n>k}\{x_n\}$.
+
+所以，即使对于不收敛的数列，我们仍可以研究其上下极限。特别地，**数列有极限当且仅当其上下极限相等**，此时有
+
+$$ \lim x_n = \varlimsup x_n = \varliminf x_n $$
+
 ## 极限的相关性质 Properties of Limits
 
 ### 单个数列极限的性质
@@ -57,6 +94,12 @@ $$
 > 任意取$\varepsilon$和一个对应的$N_\varepsilon$，则对于$n>N_\varepsilon$的部分，有$\vert x_n \vert < \vert a\vert + \varepsilon$；对于$1\leqslant n \leqslant N_\varepsilon$的部分，这$N_\varepsilon$个有限的$\vert x_n \vert$中总能照到一个最大值，令$\displaystyle M=\max\left\{\max_{1\leqslant n\leqslant N_\varepsilon}|x_n|, \vert a\vert + \varepsilon\right\}$即可。
 
 （3） **唯一性**：收敛数列有且仅有一个极限。即若$x_n\rightarrow a$且同时$x_n\rightarrow b$，则必然有$a=b$。
+
+（4） **有限韧性**：任意增加、删除、改变数列的**有限**项，不影响数列的敛散性和极限。
+
+（5） **子列收敛性**：若$x_n\rightarrow a$，则$x_n$的任意子列也必然收敛到$a$.
+
+> 可以用该定理的逆定理证明某些数列不收敛. 例如，如果数列$\{x_n\}$中可以找到一个发散子列，或者两个收敛到不同数的子列，则原数列必然不收敛.
 
 ### 多个数列极限的性质
 
@@ -76,6 +119,12 @@ $$
 
 ## 收敛数列的判据和极限的求法 Finding the Limits
 
+在涉及数列极限时，我们经常关心的问题有：
+
+- 如何证明数列$\{x_n\}$的极限就是$a$？
+- 已知数列$\{x_n\}$收敛，如何求它的极限？
+- 在不知道数列$\{x_n\}$极限的情况下，如何判断一个数列是否收敛？
+
 本节介绍一些数列收敛性的常用判定依据，和一些求极限的方法。
 
 （1）**根据定义**：使用$\varepsilon-N$语言判据.
@@ -91,3 +140,58 @@ $$
 $$
 
 这里用$\prec$表示一种近似的大小关系：当$n$足够大时，这种不等关系总是成立的。在这个关系链中，左边和右边的比值总是趋于0，因此可以得到$\displaystyle \frac{\log n}{n^k}\rightarrow 0$、$\displaystyle \frac{n^k}{n!}\rightarrow 0$、$\displaystyle \frac{a^n}{n^n}\rightarrow 0$等结论，进一步，可以得到$\sqrt[n]{n}\rightarrow 1$等结论。
+
+（4）**借助四则运算等**：参考上一节的内容，如果两个数列$\{x_n\}$和$\{y_n\}$收敛到有限的实数，则可以计算出其加减乘除得到的新的数列的极限。事实上，除了基础的加减乘除之外，我们还有其他运算规则适用：
+
+- 如果$x_n\rightarrow a$，则$|x_n|\rightarrow |a|$.
+- 如果$x_n\rightarrow a$，则$\mathrm{e}^{x_n}\rightarrow \mathrm{e}^a$.
+- 如果$x_n\rightarrow a$且$x_n >0$，则$\log x_n\rightarrow \log a$.
+- 如果$x_n\rightarrow a$且$n >0$，则$x^n \rightarrow a^n$.
+
+（5）**柯西收敛准则**：如果数列$\{x_n\}$满足，对于任意$\varepsilon > 0$，总存在$N>0$，使得对于任意$n,m>N$，总有$|x_n-x_m|<\varepsilon$，则称这样的数列为**柯西列**。柯西列等价于收敛数列。
+
+> - 柯西收敛准则是一种在不知道数列极限的前提下判定数列收敛的方法. 在后面的章节中，无穷级数和无穷积分等的收敛性往往使用柯西收敛准则来描述.
+> - “柯西列等价于收敛数列”是描述实数系完备性的定理之一，详情可见本章最后一节.
+
+（6）**单调有界数列**和e：如果数列$\{x_n\}$数列单调且有界，则其必然收敛. 具体而言，单调递增且有上界的数列收敛到其上确界；单调递减且有下界的数列收敛到其下确界.
+> - “单调有界数列必收敛”也是描述实数系完备性的定理之一.
+> - 一个重要的例子是数列$\displaystyle x_n=\left(1+\frac{1}{n}\right)^n$，这是一个递增且有上界的数列，其极限正是我们所熟知的无理数$\mathrm{e}$. 基于这一极限，可以得到诸如$\displaystyle \left(\frac{ax+b}{cx+d}\right)^{ef+g}$形式的数列极限.
+> - $\mathrm{e}$的另外一种形式是$\displaystyle \mathrm{e}=\lim 1+\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{1}{n!}$. 事实上我们有$\displaystyle \mathrm{e}=1+\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{1}{n!}+\frac{\theta_n}{n!n}, \theta_n\in(0,1)$，由此可以证明$\mathrm{e}$是无理数.
+
+
+## 实数理论 Theories of Real Numbers
+
+### 常见数集及其性质
+
+迄今为止我们接触过了自然数集$\mathbb{N}$/正整数集$\mathbb{N}^{+}$、整数集$\mathbb{Z}$、有理数集$\mathbb{Q}$、无理数集、实数集$\mathbb{R}$等集合. 除了集合外，我们还会关心定义在集合上的二元关系（如大于、小于、等于）和二元运算（如四则运算）. 此外，也有一些常见数集和二元关系/运算的性质：
+
+- 二元关系：例如，大于和小于具有**三歧性**（设$a,b\in\mathbb{X}$，则二者的关系必然属于$a>b$、$a=b$和$a < b$三者中的一种）、传递性；大于等于和小于等于具有传递性、反对称性、自反性等.
+- 二元运算：例如，加法和乘法的交换性、结合性、分配性，加法的单位元（0）和逆元（相反数）、乘法的单位元（1）和逆元（倒数）.
+- 在讨论二元运算前，首先需要验证其是否在数集上具有**封闭性**. 对于二元运算$\circ$和$a,b\in\mathbb{X}$，若$a\circ b$也在$\mathbb{X}$内，则称数集$\mathbb{X}$对运算$\circ$是封闭的. 例如，自然数集对加法和乘法封闭，但是对减法和除法不封闭；整数集对加、减、乘封闭，对除法不封闭；无理数集对加减乘除都不封闭；有理数集和实数集对加减乘除均封闭.
+
+如果重点比较$\mathbb{Z}$、$\mathbb{Q}$和$\mathbb{R}$三个集合，我们的“直观感受”是：有理数比整数更加“密集”，而实数比有理数更加“密集”. 如果用严格的数学语言来描述，对于第一个“更密集”，是因为有理数集具有**稠密性**；对于第二个“更密集”，是因为实数具有**完备性**.
+
+- **稠密性**：对$\forall a,b\in\mathbb{X}$且$a<b$，必然$\exists c\in\mathbb{X}$，使得$a<c<b$，则称数集$\mathbb{X}$是稠密的.
+
+显然，两个相邻的整数间是没有第三个整数的，故整数集不具备稠密性. 有理数和实数都具有稠密性，而实数特有的性质则是完备性. 完备性的描述可以用下一小节的几个定理来描述.
+
+### 实数的完备性
+
+下面几个定理用来描述实数的完备性，他们彼此等价，可以互相导出：
+
+（1）**戴德金（Dedekind）分割原理**：将实数集*划分*为两个集合$A$和$B$，使得$A$中的任意元素均小于$B$中的任意元素，则总存在着一个数（分界数），使得其要么是$A$的最大值，要么是$B$的最小值.
+
+> - “划分”或者分割是指$A$和$B$不相交，且并集为$\mathbb{R}$. 即任何实数必然处于其中一个集合中. 这样的一个分割记为$A|B$.
+> - 把有理数集划分为$A=\{x\in\mathbb{Q}:x^2<2 \text{或}x<0\}$和$B=\{x\in\mathbb{Q}:x^2>2 \text{且}x>0\}$，则容易验证$A|B$是有理数集的一个分割（任意有理数，其平方要么大于2，要么小于2，不可能等于2，则必然位于二者其一）. 但是，$A$没有最大值，$B$没有最小值，不符合Dedekind分割原理，所以有理数不具备完备性.
+
+（2）**柯西（Cauchy）收敛定理**：柯西列是收敛的. 柯西列的定义见上一节.
+
+（3）**确界定理**：有上界的集合必有上确界，有下界的集合必有下确界.
+
+（4）**单调收敛定理**：单调有界数列必收敛.
+
+（5）**聚点定理**：也称为Bolzano-Weierstrass定理，有界数列必有收敛子列. 一种等价叙述是，有界的无穷点集总有聚点.
+
+（6）**闭区间套定理**：若$\{[a_n,b_n]\}_{n=1}^{\infty}$满足$[a_1,b_1]\subset[a_2,b_2]\subset\cdots [a_n,b_n]\subset\cdots$，则称$\{[a_n,b_n]\}_{n=1}^{\infty}$是一个闭区间套. 如果$\lim (b_n-a_n)=0$，则$\displaystyle \bigcap_{n=1}^{\infty}[a_n,b_n]$中包含唯一的一个点.
+
+（7）**有限覆盖定理**：若闭区间$[\alpha,\beta]$和开区间族$\{(a_n,b_n)\}_{n=1}^{\infty}$ 满足 $\displaystyle[\alpha,\beta]\subset\bigcup_{n=1}^{\infty}(a_n,b_n)$，则必然能从开区间族中选择**有限个**开区间，使得$\displaystyle[\alpha,\beta]\subset \bigcup_{k=1}^{M}(a_{n_k},b_{n_k})$.
