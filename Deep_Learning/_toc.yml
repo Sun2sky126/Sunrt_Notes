@@ -1,0 +1,7 @@
+# In _toc.yml
+format: jb-book
+root: Intro
+parts:
+  - caption: 生成式AI Generative AI
+    chapters: 
+    - file: Large_Language_Models

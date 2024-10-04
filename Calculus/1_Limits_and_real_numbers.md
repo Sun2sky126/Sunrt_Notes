@@ -67,8 +67,14 @@ $$
 
 > - 若$1\leqslant n_1 < n_2 < \cdots $，则称$\{x_{n_k}\}$是$\{x_n\}$的一个**子列**.
 > - 如果$\{x_n\}$没有上界，则上极限趋于正无穷；如果有上界，记$\displaystyle M_k:=\sup_{n>k}\{x_n\}$，则$\{M_k\}$是一个递减数列（由上确界定义可得），因此其必然趋于一有限数或负无穷. 因此任何有上界数列的上极限要么存在，要么趋于负无穷.
-> - 记$\displaystyle \lim_{k\rightarrow\infty} M_k = M$，则$\forall\varepsilon>0$，存在$K>0$，使得$\forall k>K$，有$M_k < M+\varepsilon$，因此对$n>k$也有$x_n \leqslant M_n < M_k < M+\varepsilon$. 对任意子列仍然成立，因此由极限的保序性，任意子列的极限$a$必然满足$a\leqslant M+\varepsilon$. 又因为$\varepsilon$是任意正数，因此$a\leqslant M$.
-> - 进一步地，为了说明$M$就是这个最大值，需要证明等号可以取到，即找到极限为$M$的子列. 构造方法如下：$\forall n>k$有$x_n < M+\varepsilon$，又$M-\varepsilon < M_k$，则$M-\varepsilon$必然不是$\{x_n\}_{n>k}$的上界，即$\exists n'>k$使得$x_{n'}>M-\varepsilon$，我们选出$x_{n'}$添加到子列中；然后选择一个更小的$\varepsilon'$（例如可以选择$\varepsilon'=M-x_{n'}$），重复上述步骤，选出子列的下一项. 因此总有$|x_{n'}-M|<\varepsilon$，这样就找到了一个趋于$M$的子列. 至此，我们证明了上述两种定义的等价性.
+
+```{admonition} 两种定义等价性的证明
+:class: tip, dropdown
+
+- 记$\displaystyle \lim_{k\rightarrow\infty} M_k = M$，则$\forall\varepsilon>0$，存在$K>0$，使得$\forall k>K$，有$M_k < M+\varepsilon$，因此对$n>k$也有$x_n \leqslant M_n < M_k < M+\varepsilon$. 对任意子列仍然成立，因此由极限的保序性，任意子列的极限$a$必然满足$a\leqslant M+\varepsilon$. 又因为$\varepsilon$是任意正数，因此$a\leqslant M$.
+- 进一步地，为了说明$M$就是这个最大值，需要证明等号可以取到，即找到极限为$M$的子列. 构造方法如下：$\forall n>k$有$x_n < M+\varepsilon$，又$M-\varepsilon < M_k$，则$M-\varepsilon$必然不是$\{x_n\}_{n>k}$的上界，即$\exists n'>k$使得$x_{n'}>M-\varepsilon$，我们选出$x_{n'}$添加到子列中；然后选择一个更小的$\varepsilon'$（例如可以选择$\varepsilon'=M-x_{n'}$），重复上述步骤，选出子列的下一项. 因此总有$|x_{n'}-M|<\varepsilon$，这样就找到了一个趋于$M$的子列. 至此，我们证明了上述两种定义的等价性.
+
+```
 
 类似地，数列的**下极限**记为$\displaystyle\liminf_{n\rightarrow\infty} x_n$或$\displaystyle\varliminf_{n\rightarrow\infty} x_n$，定义为：
 
@@ -109,8 +115,7 @@ $$ \lim x_n = \varlimsup x_n = \varliminf x_n $$
 
 > **注意**：在保序性1-a中，必须是**严格大于**的关系，如果换成大于等于则未必成立（等号很容易找到反例）。而在保序性1-b中，必须是**大于等于**的关系。因为即使$x_n$的每一项都严格大于$y_n$，二者仍可能收敛到同一极限.
 
-<span id="sqz_thm"> </span>
-
+(sqz_thm)=
 （2）**夹逼定理**：若数列$\{x_n\}$、$\{y_n\}$和$\{z_n\}$满足，从某一项开始始终有$x_n\leqslant y_n\leqslant z_n$，且$\lim x_n = \lim z_n = a$，则$y_n$也收敛至$a$.
 
 （3）**四则运算**：若$x_n\rightarrow a$且$y_n\rightarrow b$，则$cx_n\pm dy_n\rightarrow ca+db$, $x_ny_n\rightarrow ab$；如果能保证$y_n\neq 0$和$b\neq 0$，则还可以有$\displaystyle \frac{x_n}{y_n}\rightarrow \frac{a}{b}$.
@@ -129,7 +134,7 @@ $$ \lim x_n = \varlimsup x_n = \varliminf x_n $$
 
 （1）**根据定义**：使用$\varepsilon-N$语言判据.
 
-（2）**根据夹逼定理**：夹逼定理参考[上一节](#sqz_thm)针对数列进行左右两个方向的放缩，如果两个新的数列收敛到同一个极限，则原数列也必然收敛到这个值。
+（2）**根据夹逼定理**：夹逼定理参考[上一节](sqz_thm)针对数列进行左右两个方向的放缩，如果两个新的数列收敛到同一个极限，则原数列也必然收敛到这个值。
 
 > 一个推论是，如果$x_n\rightarrow +\infty$，且从某项开始$y_n \geqslant x_n$，则$y_n\rightarrow +\infty$。负无穷大的情况同理.
 
@@ -155,8 +160,14 @@ $$
 
 （6）**单调有界数列**和e：如果数列$\{x_n\}$数列单调且有界，则其必然收敛. 具体而言，单调递增且有上界的数列收敛到其上确界；单调递减且有下界的数列收敛到其下确界.
 > - “单调有界数列必收敛”也是描述实数系完备性的定理之一.
-> - 一个重要的例子是数列$\displaystyle x_n=\left(1+\frac{1}{n}\right)^n$，这是一个递增且有上界的数列，其极限正是我们所熟知的无理数$\mathrm{e}$. 基于这一极限，可以得到诸如$\displaystyle \left(\frac{ax+b}{cx+d}\right)^{ef+g}$形式的数列极限.
+> - 一个重要的例子是数列$\displaystyle x_n=\left(1+\frac{1}{n}\right)^n$，这是一个递增且有上界的数列，其极限正是我们所熟知的无理数$\mathrm{e}$. 基于这一极限，可以得到诸如$\displaystyle \left(\frac{an+b}{cn+d}\right)^{en+f}$形式的数列极限.
 > - $\mathrm{e}$的另外一种形式是$\displaystyle \mathrm{e}=\lim 1+\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{1}{n!}$. 事实上我们有$\displaystyle \mathrm{e}=1+\frac{1}{1!}+\frac{1}{2!}+\cdots+\frac{1}{n!}+\frac{\theta_n}{n!n}, \theta_n\in(0,1)$，由此可以证明$\mathrm{e}$是无理数.
+
+（7）**Stolz定理**：设$\{y_n\}$单调递增且趋于正无穷，且极限$\displaystyle \lim\frac{x_n-x_{n-1}}{y_n-y_{n-1}}$存在，则有
+
+$$
+\lim\frac{x_n}{y_n}=\lim\frac{x_n-x_{n-1}}{y_n-y_{n-1}}
+$$
 
 
 ## 实数理论 Theories of Real Numbers
@@ -191,6 +202,14 @@ $$
 （4）**单调收敛定理**：单调有界数列必收敛.
 
 （5）**聚点定理**：也称为Bolzano-Weierstrass定理，有界数列必有收敛子列. 一种等价叙述是，有界的无穷点集总有聚点.
+
+> **聚点**有三种等价的定义方式，设$A$是集合，$x$是某个点（数字），则$x$是$A$的聚点当且仅当：
+> 
+> - 存在$A$中的一个数列收敛到$x$；
+> - 任意一个$x$的邻域$N(x)$（即包含$x$的区间），都包含**至少一个**相异于$x$的$A$中的点.
+> - 任意一个$x$的邻域$N(x)$（即包含$x$的区间），都包含无数个$A$中的点.
+> 
+> 注意，$x$是$A$的聚点并不要求$x$一定在$A$内.
 
 （6）**闭区间套定理**：若$\{[a_n,b_n]\}_{n=1}^{\infty}$满足$[a_1,b_1]\subset[a_2,b_2]\subset\cdots [a_n,b_n]\subset\cdots$，则称$\{[a_n,b_n]\}_{n=1}^{\infty}$是一个闭区间套. 如果$\lim (b_n-a_n)=0$，则$\displaystyle \bigcap_{n=1}^{\infty}[a_n,b_n]$中包含唯一的一个点.
 

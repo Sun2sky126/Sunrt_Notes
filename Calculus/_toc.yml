@@ -1,6 +1,13 @@
 # In _toc.yml
 format: jb-book
 root: 0_Intro
-chapters:
-# - file: 0_Intro
-- file: 1_Limits_and_real_numbers
+parts:
+  - caption: 数列和级数 Sequences & Series
+    chapters:
+    - file: 1_Limits_and_real_numbers
+    - file: 2_Series_of_numbers
+    - file: 3_Series_of_func
+  
+  - caption: 一元函数微积分 Calculus for Univariable Functions
+    chapters:
+    - file: 4_Univar_func_cont

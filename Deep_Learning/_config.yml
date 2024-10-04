@@ -1,0 +1,11 @@
+# In _config.yml
+title: Deep Learning
+author: Sunrt_THU
+logo: parsee.jpg
+execute:
+  execute_notebooks: force
+
+repository:
+  url: https://github.com/Sun2sky126/Sunrt_Notes
+html:
+  use_repository_button: true

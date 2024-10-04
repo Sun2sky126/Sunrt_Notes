@@ -1,2 +1,4 @@
 .history/
 */_build
+*/*.jpg
+*/*.png
