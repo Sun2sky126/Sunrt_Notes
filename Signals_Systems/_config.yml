@@ -1,0 +1,11 @@
+# In _config.yml
+title: Linear Algebra
+author: Sunrt_THU
+logo: cover.jpg
+execute:
+  execute_notebooks: force
+
+repository:
+  url: https://github.com/Sun2sky126/Sunrt_Notes
+html:
+  use_repository_button: true
